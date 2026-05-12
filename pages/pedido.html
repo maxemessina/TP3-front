@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Solicitud de Servicio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
+</head>
+<body>
+
+<header>
+    <h1>Solicitud de Servicio</h1>
+<nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="equipo.html">Equipo</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="servicios.html">Disciplinas</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<main>
+
+    <form>
+
+        <div class="campo">
+            <label>Nombre completo:</label>
+            <input type="text" name="nombre">
+        </div>
+
+        <div class="campo">
+            <label>Teléfono:</label>
+            <input type="tel" name="telefono">
+        </div>
+
+        <div class="campo">
+            <label>Servicio:</label>
+            <select>
+                <option>Musculación</option>
+                <option>Pilates</option>
+                <option>Crossfit</option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label>Tiempo:</label>
+            <div class="inline">
+                <input type="radio" name="Tiempo"> Medio mes
+                <input type="radio" name="Tiempo"> Mes completo
+            </div>
+        </div>
+
+        <div class="campo">
+            <label>Fecha de inicio:</label>
+            <input type="date">
+        </div>
+
+        <div class="campo">
+            <label>Comentarios:</label>
+            <textarea rows="4"></textarea>
+        </div>
+
+        <div class="botones">
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpiar</button>
+        </div>
+
+    </form>
+
+</main>
+
+<footer class = "footer">
+    <div>
+        <p class="Contacto">
+        <img class="imagenes_contacto" src="../assets/img/Footer_phone.png" alt="Telefono de Contacto">
+            2915557589
+        </p>
+    </div>
+    <div>
+        <p class= "Contacto">
+            <img class="imagenes_contacto" src="../assets/img/Footer_mail.png" alt="Mail de contacto">
+            GymnasioON@gmail.com
+        </P>
+    </div>
+    <div>
+        <p class="Contacto">
+            <img class="imagenes_contacto" src="../assets/img/Footer_instagram.png" alt="Instagram de contacto">
+            @GymONOfficial
+        </p>
+    </div>
+    <div id="Copyright"><p>&copy; 2026 ON Gym - Training Center | Av. Alem 1234, Bahía Blanca | <a href="../pages/contacto.html">Contacto</a> </p></div>
+
+</footer>
+
+</body>
+</html>

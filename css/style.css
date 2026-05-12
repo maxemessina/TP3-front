@@ -1,0 +1,277 @@
+/* ===== ESTILOS GENERALES ===== */
+body {
+    background-color: #0f0f0f;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    color: #00ff88;
+    padding: 20px;
+    /* Agrega fuente especial para los headers */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    background-color: #00ff88;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 8px;
+}
+
+nav a:hover {
+    background-color: #00cc70;
+}
+
+main {
+    text-align: center;
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    
+}
+
+/* Cualquier imagen adentro de un figure se adapta automáticamente */
+figure {
+    margin: 0 auto;
+    text-align: center;
+}
+
+figure img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+/* ===== SERVICIOS ===== */
+
+.servicio {
+    display: inline-block;
+    width: 300px;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    margin: 20px;
+    padding: 15px;
+    text-align: center;
+    vertical-align: top;
+    box-shadow: 0 0 10px rgba(0, 255, 100, 0.2);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servicio:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 255, 100, 0.6);
+}
+
+.servicio img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.titulo-servicio {
+    color: #00ff88;
+    margin-top: 10px;
+}
+
+.descripcion {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.precio {
+    font-weight: bold;
+    color: #ccc;
+}
+
+/* ===== PEDIDO ===== */
+
+/* formulario */
+form {
+    width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    border-top: 2px solid #00ff88;
+}
+
+/* SOLO títulos dentro del form */
+form h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #00ff88;
+}
+
+/* campos */
+.campo {
+    margin-bottom: 15px;
+}
+
+label {
+    color: #00ff88;
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+/* inputs */
+input, select, textarea {
+    width: 100%;
+    padding: 13px;
+    margin-top: 5px;
+    color: black;
+    background-color: white;
+    font-size: 16px;
+}
+
+/* radios */
+.inline input {
+    width: auto;
+    margin-right: 10px;
+}
+
+/* botones */
+.botones {
+    margin-top: 15px;
+    text-align: center;
+}
+
+button, .boton {
+    padding: 12px 25px;
+    margin: 10px;
+    background-color: #00ff88;
+    color: black;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+
+    /* Agregados para INDEX, para que el enlace se vea como botón. */
+    text-decoration: none; 
+    display: inline-block;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+button:hover, .boton:hover {
+    background-color: #00cc70;
+}
+
+/* INDEX: Unifica el color verde para títulos del main y enlaces del footer */
+main h2, main h3, article a,footer a {
+    color: #00ff88;
+    text-decoration: none;
+}
+
+/* INDEX: Efecto hover solo para el enlace del footer */
+footer a:hover, article a:hover {
+    color: #00cc70;
+}
+
+/* ===== FAQ ===== */
+
+.faq-item {
+    display: inline-block;
+    width: 300px;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    margin: 20px;
+    padding: 15px;
+    text-align: center;
+    vertical-align: top;
+    box-shadow: 0 0 10px rgba(0, 255, 100, 0.2);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 255, 100, 0.6);
+}
+
+.faq-item h3 {
+    color: #00ff88;
+}
+
+
+/*PARTE DE LA PAGINA EQUIPO.HTML*/
+
+/*Dejo un gap (espacio) entre una presentacion y otra*/
+.equipo{
+    margin-bottom: 80px;
+}
+/*Acomodo el tamanio de imagenes de perfil*/
+.Imagen_equipo{
+    position:relative;
+    width: 500px;
+    object-fit: cover;
+    display: block;
+}
+/*Retoco las presentaciones para que no esten tan pegadas y alineo nombres y cargos(texto)*/
+.Presentacion{
+    width: fit-content;
+    margin: 150px;
+    align-items:center;
+    display:flex;
+    flex-direction: column;
+    font-size: 35px;
+    box-shadow: 0 0 10px rgba(0, 255, 100, 0.2);
+}
+/*Marco un espaciado en el texto maximo para que no ocupe toda la pantalla*/
+.Presentacion p{
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    max-width: 60%;
+}
+
+
+/*Modifico el footer de la pagina equipo.html */
+.footer{
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    position: relative; /*Para el absolute del copyright*/
+}
+/*achico imagenes y ordeno los parrafos del footer*/
+.imagenes_contacto{
+    width: 30px;
+    margin-inline: 40px;
+}
+/*Alineo los div del footer (ig,mail y num + copyright*/
+.Contacto{
+    display: flex;
+    align-items: center;
+    height: 107px;
+}
+#Copyright{
+    position: absolute;
+    bottom: 5px;   /* lo pega abajo */
+    width: 100%;
+    text-align: center;
+}
