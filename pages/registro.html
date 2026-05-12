@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cine Aurora 📽️ - Registro</title>
+    <meta name="description" content="Cine Aurora - Registro" />
+
+    <link rel="icon" href="../assets/favicon/logo-cine.png" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body>
+    
+    <header class="header">
+      <div class="header__logo">
+        <h1 class="header__title">Cine Aurora</h1>
+        <img
+          class="header__img"
+          src="../assets/favicon/logo-cine.png"
+          alt="logo-cine-aurora"
+        />
+      </div>
+
+      <nav class="nav">
+        <a class="nav__link" href="../index.html">Inicio</a>
+        <a class="nav__link" href="./estrenos.html">Próximos estrenos</a>
+        <a class="nav__link" href="../index.html">Volver</a>
+      </nav>
+    </header>
+
+  
+    <main class="container">
+      <section class="form-container">
+        <form class="card-vertical form" action="login.html">
+          <h2 class="form__title">Crear nueva cuenta</h2>
+
+          <div class="form__group">
+            <label class="form__label">Nombre Completo</label>
+            <input class="form__input" type="text" required />
+          </div>
+
+          <div class="form__group">
+            <label class="form__label">Email</label>
+            <input class="form__input" type="email" required />
+          </div>
+
+          <div class="form__group">
+            <label class="form__label">Fecha de nacimiento</label>
+            <input class="form__input" type="date" required />
+          </div>
+
+          <div class="form__group">
+            <label class="form__label">Contraseña</label>
+            <input class="form__input" type="password" required />
+          </div>
+
+          <div class="form__group">
+            <label class="form__label">Confirmar contraseña</label>
+            <input class="form__input" type="password" required />
+          </div>
+
+          <hr class="form__divider" />
+
+          <!-- SECCIÓN EXTRA -->
+          <section class="card-horizontal extra">
+            <div class="extra__info">
+              <h3>Datos para ayudar al cine</h3>
+              <p>Estos datos nos ayudan a mejorar tu experiencia.</p>
+            </div>
+
+            <div class="extra__inputs">
+              <div class="form__group">
+                <label class="form__label"
+                  >Elegí tu color favorito para las butacas</label
+                >
+                <input class="form__input" type="color" />
+              </div>
+
+              <div class="form__group">
+                <label class="form__label"
+                  >¿Cuántas entradas comprás? (0-10)</label
+                >
+                <input class="form__input" type="range" min="0" max="10" />
+              </div>
+
+              <div class="form__group">
+                <label class="form__label">Género favorito</label>
+                <select class="form__input">
+                  <option>Acción</option>
+                  <option>Drama</option>
+                  <option>Ciencia ficción</option>
+                  <option>Terror</option>
+                  <option>Comedia</option>
+                  <option>Romance</option>
+                </select>
+              </div>
+
+              <div class="form__group">
+                <label class="form__label">Snack favorito</label>
+
+                <div class="form__radio-group">
+                  <label><input type="radio" name="snack" /> Dulce</label>
+                  <label><input type="radio" name="snack" /> Salado</label>
+                  <label><input type="radio" name="snack" /> Chocolate</label>
+                  <label><input type="radio" name="snack" /> Frutos secos</label>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <button class="button" type="submit">Registrarse</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>&copy; 2026 Cine Aurora - Todos los derechos reservados</p>
+    </footer>
+  </body>
+</html>
