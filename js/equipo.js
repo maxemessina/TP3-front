@@ -2,7 +2,7 @@ async function cargarEquipo() {
 
     try {
 
-        const response = await fetch('http://localhost:3000/equipo');
+        const response = await fetch('http://localhost:3000/api/equipo');
 
         const equipo = await response.json();
 
