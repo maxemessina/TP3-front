@@ -3,14 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ON Gym - Perfil</title>
+    <title>ON Gym | Perfil</title>
     <meta name="description" content="ON Gym - Mi perfil" />
     <link rel="icon" href="../assets/favicon/favicon.ico" />
     <link rel="stylesheet" href="../css/style.css" />
   </head>
 
   <body>
-    <header class="header">
+    <script> // verifica si el usuario está logueado, si no lo redirige al login
+      if (!localStorage.getItem('usuarioId')) {
+          window.location.href = 'login.html';
+      }
+    </script>
+
+    <header>
       <div>
         <h1>ON Gym | Training Center</h1>
       </div>
@@ -22,15 +28,29 @@
             <li><a href="pedido.html">Asociate</a></li>
             <li><a href="equipo.html">Equipo</a></li>
             <li><a href="faq.html">FAQ</a></li>
+            <li><a href="#" onclick="cerrarSesion()">Cerrar Sesión</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <main class="perfil">
-      <h1>Panel de usuario</h1>
-      <section>
-      <h2>Hola, JOHN DOE 👋📽️!</h2>
+    <main>
+        <section>
+            <h2>Panel de Usuarios</h2>
+            <div>
+                <p>Socio: <p id="user-name">...</p></p>
+                <p>Email: <p id="user-email">...</p></p>
+                <p>Alta: <p id="user-date">...</p></p>
+                <p>Plan/Objetivo: <p id="user-goal">...</p></p>
+            </div>
+        </section>
+
+        <section class="seccion-dinamica">
+          <h3 class="titulo-seccion">Tus Planes Contratados</h3>
+          
+          <div id="pedidos-container" class="grid-dinamica">
+          </div>
+        </section>
     </main>
 
     <footer class = "footer">
@@ -54,5 +74,8 @@
         </div>
         <div id="Copyright"><p>&copy; 2026 ON Gym - Training Center | Av. Alem 1234, Bahía Blanca | <a href="../pages/contacto.html">Contacto</a> </p></div>
     </footer>
+
+    <script src="../js/perfil.js"></script>
+
   </body>
 </html>

@@ -15,7 +15,7 @@ async function cargarContenidoPrincipal() {
 
         if (loading) loading.style.display = 'none';
 
-        // 1. Construcción del bloque HERO
+        // bloque principal
         let htmlDinamico = `
             <article class="hero-article">
                 <h2 class="hero-titulo">${data.hero.titulo}</h2>
@@ -30,7 +30,7 @@ async function cargarContenidoPrincipal() {
             <hr class="separador">
         `;
 
-        // 2. Construcción de CLASES DESTACADAS
+        // clases destacadas
         htmlDinamico += `
             <section class="seccion-dinamica">
                 <h3 class="titulo-seccion">Clases Destacadas</h3>
@@ -54,7 +54,6 @@ async function cargarContenidoPrincipal() {
             <hr class="separador">
         `;
 
-        // 3. Construcción de la GALERÍA
         htmlDinamico += `
             <section class="seccion-dinamica">
                 <h3 class="titulo-seccion">Instalaciones</h3>
@@ -75,7 +74,7 @@ async function cargarContenidoPrincipal() {
             </section>
         `;
 
-        // Inyectamos todo el HTML generado en el DOM
+        // agrega el HTML generado en el DOM
         contenedor.innerHTML = htmlDinamico;
 
     } catch (error) {
