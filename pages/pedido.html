@@ -10,7 +10,7 @@
 
 <header>
     <h1>ON Gym | Training Center</h1>
-<nav>
+    <nav>
         <ul>
             <li><a href="../index.html">Home</a></li>
             <li><a href="servicios.html">Disciplinas</a></li>
@@ -21,24 +21,23 @@
     </nav>
 </header>
 
-
 <main>
 
-    <form>
+    <form id="formPedido">
 
         <div class="campo">
             <label>Nombre completo:</label>
-            <input type="text" name="nombre">
+            <input type="text" name="nombre" id="nombre" required>
         </div>
 
         <div class="campo">
             <label>Teléfono:</label>
-            <input type="tel" name="telefono">
+            <input type="tel" name="telefono" id="telefono" required>
         </div>
 
         <div class="campo">
             <label>Servicio:</label>
-            <select>
+            <select name="servicio" id="servicio">
                 <option>Musculación</option>
                 <option>Pilates</option>
                 <option>Crossfit</option>
@@ -48,19 +47,19 @@
         <div class="campo">
             <label>Tiempo:</label>
             <div class="inline">
-                <input type="radio" name="Tiempo"> Medio mes
-                <input type="radio" name="Tiempo"> Mes completo
+                <label><input type="radio" name="tiempo" value="medio_mes"> Medio mes</label>
+                <label><input type="radio" name="tiempo" value="mes_completo"> Mes completo</label>
             </div>
         </div>
 
         <div class="campo">
             <label>Fecha de inicio:</label>
-            <input type="date">
+            <input type="date" name="fecha" id="fecha">
         </div>
 
         <div class="campo">
             <label>Comentarios:</label>
-            <textarea rows="4"></textarea>
+            <textarea rows="4" name="comentarios" id="comentarios"></textarea>
         </div>
 
         <div class="botones">
@@ -71,19 +70,18 @@
     </form>
 
 </main>
-
-<footer class = "footer">
+<footer class="footer">
     <div>
         <p class="Contacto">
-        <img class="imagenes_contacto" src="../assets/img/Footer_phone.png" alt="Telefono de Contacto">
+            <img class="imagenes_contacto" src="../assets/img/Footer_phone.png" alt="Telefono de Contacto">
             2915557589
         </p>
     </div>
     <div>
-        <p class= "Contacto">
+        <p class="Contacto">
             <img class="imagenes_contacto" src="../assets/img/Footer_mail.png" alt="Mail de contacto">
             GymnasioON@gmail.com
-        </P>
+        </p>
     </div>
     <div>
         <p class="Contacto">
@@ -91,9 +89,12 @@
             @GymONOfficial
         </p>
     </div>
-    <div id="Copyright"><p>&copy; 2026 ON Gym - Training Center | Av. Alem 1234, Bahía Blanca | <a href="../pages/contacto.html">Contacto</a> </p></div>
 
+    <div id="Copyright">
+        <p>&copy; 2026 ON Gym - Training Center | Av. Alem 1234, Bahía Blanca | 
+        <a href="../pages/contacto.html">Contacto</a></p>
+    </div>
 </footer>
-
 </body>
+<script src="..\js\infoped.js"></script>
 </html>
