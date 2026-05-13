@@ -1,4 +1,4 @@
-const API_URL = 'https://tp3-back-xtfk.onrender.com';
+const API_URL = 'https://tp3-back-xtfk.onrender.com/api/servicios';
 
 async function cargarServicios() {
     const container = document.getElementById('servicios-container');
