@@ -1,28 +1,67 @@
-# ON GYM | Training Center
+# ON GYM | Training Center - Front-End (TP3)
 
-Proyecto de desarrollo web creado para el Trabajo Práctico N°1. Consiste en la maquetación completa del sitio web para un centro de entrenamiento integral, aplicando buenas prácticas de desarrollo, diseño responsivo básico y trabajo colaborativo.
+![Home page](./assets/img/on-gym-index.png) 
 
-## Descripción del Proyecto
+Proyecto de desarrollo web para el **Trabajo Práctico N°3** de Programación III. Esta etapa consiste en la evolución dinámica del sitio web maquetado en los prácticos anteriores, integrando el consumo asíncrono de una API REST propia desplegada en **Render** para reemplazar los datos estáticos y gestionar un sistema completo de usuarios.
 
-El sitio web está diseñado para "ON GYM", un gimnasio orientado al alto rendimiento y disciplinas como musculación, crossfit y pilates. La página permite a los usuarios conocer las instalaciones, informarse sobre los servicios disponibles, conocer al equipo de trabajo, resolver dudas frecuentes y solicitar una suscripción mediante formularios interactivos.
+## 📖 Descripción del Proyecto
 
-## Grupo 16 - Integrantes y Responsabilidades
+El sitio web de **ON GYM** permite a los usuarios explorar las instalaciones, informarse sobre las disciplinas de alto rendimiento y conocer al staff técnico. A partir del TP3, la plataforma incorpora interactividad en tiempo real: renderizado dinámico de contenidos desde el servidor, registro de nuevos socios, inicio de sesión seguro y un panel de perfil personalizado que persiste en el navegador.
 
-El desarrollo fue dividido de manera equitativa, asignando la maquetación y estructuración de cada vista a los distintos miembros del equipo:
+---
 
-* **Priscila Arrimada:** Desarrollo del formulario de contacto (`contacto.html`).
-* **Tomás Astudillo:** Desarrollo de la página integrantes e información del equipo (`equipo.html`).
-* **Valentina Guerrieri:** Desarrollo de la página de preguntas frecuentes (`faq.html`).
-* **Máximo Messina:** Desarrollo de la página principal (`index.html`).
-* **Máximo Moraes:** Estructuración y diseño de la sección de disciplinas (`servicios.html`).
-* **Lucas Rojas:** Estructuración y diseño del formulario de suscripción y pedidos (`pedido.html`).
+## 👥 Grupo 16 - Integrantes y División de Tareas
 
-*Nota: Todos los integrantes colaboraron en la unificación de los estilos globales mediante el archivo `style.css`, destacando a **Lucas Rojas** y **Máximo Moraes** que desarrollaron la plantilla base.*
+El desarrollo y refactorización del código se distribuyó equitativamente entre los integrantes para asegurar que todos apliquen conceptos de asincronismo, peticiones HTTP y manipulación del DOM:
 
-*Nota para la profesora: La rama de alumno-arrimada, encargada de hacer el formulario de contacto, es la que tuvo problemas de conexión con git. Por eso es que el header, el footer y el nav quedaron desactualizados. Gracias por ayuda.
+* **Priscila Arrimada:** `contacto.html`.
+* **Tomás Astudillo:** `equipo.html`, `equipo.js`.
+* **Valentina Guerrieri:** `faq.html`, `faq.js`.
+* **Máximo Messina:** `index.html`, `index.js`, `login.html`, `login.js`, `registro.html`, `registro.js`, `perfil.html` y `perfil.js`.
+* **Máximo Moraes:** `servicios.html`, `servicios.js`.
+* **Lucas Rojas:** `pedido.html` y `infoped.js`.
 
-## Tecnologías Utilizadas
+---
 
-* **HTML5:** Estructura semántica (`<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<footer>`).
-* **CSS3:** Estilos en cascada, implementación de Box Model (margin, padding, border) y selectores eficientes.
-* **Git & GitHub:** Control de versiones y trabajo colaborativo mediante un flujo de ramas (`main`, `dev` y ramas personales por alumno).
+## 📂 Distribución de Archivos y Carpetas
+
+La arquitectura del proyecto cliente respeta una separación estricta de recursos:
+
+```text
+📁 TP3-front-dev/
+├── 📁 assets/          # Recursos gráficos (imágenes del gimnasio, staff, íconos y favicon)
+├── 📁 css/             # Hojas de estilo globales y modulares (style.css)
+├── 📁 js/              # Controladores del Front-End (Lógica asíncrona y consumo de API)
+│   ├── equipo.js
+│   ├── faq.js
+│   ├── index.js
+│   ├── login.js
+│   ├── perfil.js
+│   ├── registro.js
+│   └── servicios.js
+├── 📁 pages/           # Vistas secundarias del sitio
+│   ├── contacto.html
+│   ├── equipo.html
+│   ├── faq.html
+│   ├── login.html
+│   ├── pedido.html
+│   ├── perfil.html
+│   ├── registro.html
+│   └── servicios.html
+└── 📄 index.html       # Página principal (Home)
+
+```
+
+---
+
+## Explicación de Funciones:
+
+* `login.js` (Event Listener submit): Intercepta el envío del formulario, previene el comportamiento por defecto (e.preventDefault()) y captura las credenciales. Realiza una petición fetch por método POST enviando un cuerpo JSON a la API en Render. Si la respuesta es exitosa (respuesta.ok), guarda el id del usuario en el localStorage para mantener la sesión activa y redirige a perfil.html. Caso contrario, notifica el error de credenciales.
+
+* `registro.js` (Event Listener submit): Utiliza la clase FormData y Object.fromEntries() para mapear automáticamente todos los inputs del formulario en un objeto plano. Realiza una validación defensiva comparando que password y confirm_password coincidan. Posteriormente, envía los datos mediante POST al endpoint de registro y, tras el alta exitosa en el servidor, redirige a la vista de login.
+
+* `perfil.js` cargarDatosPerfil(): Se ejecuta automáticamente al cargar el DOM. Recupera el usuarioId desde el localStorage y realiza una petición GET a la ruta protegida /api/perfil/${userId}. Inyecta los datos personales (nombre, email, objetivo) en las etiquetas correspondientes. Además, itera sobre el array de pedidos del usuario para renderizar tarjetas de servicios contratados o, de forma dinámica, plasma un Empty State (mensaje informativo) si el usuario aún no posee planes activos.
+
+cerrarSesion(): Elimina el rastro del usuarioId del localStorage y redirige de forma segura a la página de inicio (index.html), cerrando el ciclo de la sesión.
+
+* `index.js` cargarContenidoPrincipal(): Se encarga de construir la página de inicio solicitando información centralizada al servidor. Implementa un Efecto de Carga: detecta el elemento spinner/cargando (#loading) y lo oculta (style.display = 'none') únicamente cuando la promesa del fetch se resuelve con éxito. Luego, distribuye dinámicamente el bloque Hero, las clases destacadas y la galería de instalaciones. Posee un bloque catch que renderiza un mensaje de error amigable en el DOM si el servidor de Render se encuentra en reposo (sleep).
