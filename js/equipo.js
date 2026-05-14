@@ -2,7 +2,7 @@ async function cargarEquipo() {
 
     try {
 
-        const response = await fetch('http://localhost:3000/api/equipo');
+        const response = await fetch('https://tp3-back-xtfk.onrender.com/api/equipo');
 
         const equipo = await response.json();
 
